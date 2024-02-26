@@ -15,7 +15,7 @@ class InstrumentInfoListResponse {
       instrumentInfoList.add(indexData);
     }
 
-    print(instrumentInfoList.toString());
+   
   }
 
   Map<String, dynamic> toJson() {

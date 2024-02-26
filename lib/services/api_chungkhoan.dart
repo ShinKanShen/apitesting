@@ -13,7 +13,7 @@ class AppApiService {
     try {
       Response chungKhoanData =
           await _dio.get('$_baseUrl/instruments/$marketcode');
-      print('chungkhoan data: ${chungKhoanData.data}');
+     /// print('chungkhoan data: ${chungKhoanData.data}');
       
       chungkhoans = ChungKhoan2.fromJson(chungKhoanData.data);
       
@@ -41,7 +41,7 @@ class AppApiService {
     try {
       Response chungKhoanData =await _dio.get('$_baseUrl/instruments/');
           
-       print('chungkhoan data: ${chungKhoanData.data['d']}');
+      // print('chungkhoan data: ${chungKhoanData.data['d']}');
       // InstrumentInfoListResponse.fromJson(chungKhoanData.data['d']);
       chungkhoans = ChungKhoan.fromJson(chungKhoanData.data['d']);  
       
@@ -56,12 +56,9 @@ class AppApiService {
         print('Error sending request!');
         print(e.message);
       }
+      
     }
-    if (chungkhoans != null) {
-      print('chung khoán: ${chungkhoans.toJson()}');
-    } else {
-      print('chung khoán is null');
-    }
+   
     return chungkhoans;
   }
 }
